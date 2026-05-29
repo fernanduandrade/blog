@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "projects": "Proyectos",
+    "uses": "Herramientas",
+    "now": "Ahora"
+  },
+  "hero": {
+    "role": "Ingeniero de Software de Brasil.",
+    "bio": "Construyo cosas útiles, contribuyo al open source y escribo sobre software, productividad y sistemas."
+  },
+  "home": {
+    "latestPosts": "Últimas entradas",
+    "viewAllPosts": "Ver todas →",
+    "projects": "Proyectos",
+    "viewAllProjects": "Ver todos →",
+    "now": "Ahora",
+    "moreOnNow": "Más en mi página ahora →"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Pensamientos sobre ingeniería de software, productividad y construir cosas que duran.",
+    "all": "Todos",
+    "categories": {
+      "engineering": "Ingeniería",
+      "productivity": "Productividad",
+      "building": "Construyendo",
+      "life": "Vida"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Cosas que he construido y proyectos open source.",
+    "all": "Todos",
+    "openSource": "Open Source",
+    "sideProjects": "Proyectos Propios",
+    "tools": "Herramientas",
+    "viewProject": "Ver proyecto →",
+    "viewOnGithub": "Ver en GitHub →"
+  },
+  "uses": {
+    "title": "Herramientas",
+    "subtitle": "Herramientas, apps y equipos que uso a diario.",
+    "development": "Desarrollo",
+    "productivity": "Productividad",
+    "workCommunication": "Trabajo & Comunicación",
+    "other": "Otros"
+  },
+  "now": {
+    "title": "Ahora",
+    "subtitle": "Lo que estoy haciendo ahora mismo.",
+    "lastUpdated": "Última actualización:",
+    "sections": {
+      "focus": "Enfoque",
+      "learning": "Aprendiendo",
+      "building": "Construyendo",
+      "thinkingAbout": "Pensando en",
+      "listening": "Escuchando"
+    }
+  },
+  "article": {
+    "onThisPage": "En esta página",
+    "share": "Compartir",
+    "minRead": "min de lectura",
+    "backToBlog": "Blog"
+  },
+  "footer": {
+    "builtWith": "Construido con Nuxt y MDX.",
+    "backToTop": "Volver arriba"
+  }
+}

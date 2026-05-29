@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "projects": "Projects",
+    "uses": "Uses",
+    "now": "Now"
+  },
+  "hero": {
+    "role": "Software Engineer from Brazil.",
+    "bio": "I build useful things, contribute to open source and write about software, productivity and systems."
+  },
+  "home": {
+    "latestPosts": "Latest posts",
+    "viewAllPosts": "View all posts →",
+    "projects": "Projects",
+    "viewAllProjects": "View all projects →",
+    "now": "Now",
+    "moreOnNow": "More on my now page →"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts on software engineering, productivity, and building things that last.",
+    "all": "All",
+    "categories": {
+      "engineering": "Engineering",
+      "productivity": "Productivity",
+      "building": "Building",
+      "life": "Life"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Things I have built and open sourced.",
+    "all": "All",
+    "openSource": "Open Source",
+    "sideProjects": "Side Projects",
+    "tools": "Tools",
+    "viewProject": "View project →",
+    "viewOnGithub": "View on GitHub →"
+  },
+  "uses": {
+    "title": "Uses",
+    "subtitle": "Tools, apps and equipment I use on a daily basis.",
+    "development": "Development",
+    "productivity": "Productivity",
+    "workCommunication": "Work & Communication",
+    "other": "Other"
+  },
+  "now": {
+    "title": "Now",
+    "subtitle": "What I'm doing right now.",
+    "lastUpdated": "Last updated:",
+    "sections": {
+      "focus": "Focus",
+      "learning": "Learning",
+      "building": "Building",
+      "thinkingAbout": "Thinking about",
+      "listening": "Listening"
+    }
+  },
+  "article": {
+    "onThisPage": "On this page",
+    "share": "Share",
+    "minRead": "min read",
+    "backToBlog": "Blog"
+  },
+  "footer": {
+    "builtWith": "Built with Nuxt and MDX.",
+    "backToTop": "Back to top"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "projects": "Projetos",
+    "uses": "Ferramentas",
+    "now": "Agora"
+  },
+  "hero": {
+    "role": "Software Engineer.",
+    "bio": "Construo coisas úteis, contribuo para o open source e escrevo sobre software, produtividade e sistemas."
+  },
+  "home": {
+    "latestPosts": "Últimas postagens",
+    "viewAllPosts": "Ver todas →",
+    "projects": "Projetos",
+    "viewAllProjects": "Ver todos →",
+    "now": "Agora",
+    "moreOnNow": "Mais na página agora →"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Pensamentos sobre engenharia de software, produtividade e coisas que duram.",
+    "all": "Todos",
+    "categories": {
+      "engineering": "Engenharia",
+      "productivity": "Produtividade",
+      "building": "Construindo",
+      "life": "Vida"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Coisas que construí e projetos open source.",
+    "all": "Todos",
+    "openSource": "Open Source",
+    "sideProjects": "Side Projects",
+    "tools": "Ferramentas",
+    "viewProject": "Ver projeto →",
+    "viewOnGithub": "Ver no GitHub →"
+  },
+  "uses": {
+    "title": "Ferramentas",
+    "subtitle": "Ferramentas, apps e equipamentos que uso no dia a dia.",
+    "development": "Desenvolvimento",
+    "productivity": "Produtividade",
+    "workCommunication": "Trabalho & Comunicação",
+    "other": "Outros"
+  },
+  "now": {
+    "title": "Agora",
+    "subtitle": "O que estou fazendo agora.",
+    "lastUpdated": "Última atualização:",
+    "sections": {
+      "focus": "Foco",
+      "learning": "Aprendendo",
+      "building": "Construindo",
+      "thinkingAbout": "Pensando sobre",
+      "listening": "Ouvindo"
+    }
+  },
+  "article": {
+    "onThisPage": "Nesta página",
+    "share": "Compartilhar",
+    "minRead": "min de leitura",
+    "backToBlog": "Blog"
+  },
+  "footer": {
+    "builtWith": "Construído com Nuxt e MDX.",
+    "backToTop": "Voltar ao topo"
+  }
+}
