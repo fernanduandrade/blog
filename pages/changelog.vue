@@ -55,6 +55,39 @@ useSeoMeta({
 const changelogEntries = computed(() => {
     const entries = [
         {
+            date: '2026-05-30',
+            type: 'update',
+            title: locale.value === 'pt'
+                ? 'API de projetos adicionada'
+                : locale.value === 'es'
+                    ? 'API de proyectos añadida'
+                    : 'Projects API added',
+
+            description: locale.value === 'pt'
+                ? 'Agora a página de projetos consome a API do GitHub e ignora o repositório README do perfil.'
+                : locale.value === 'es'
+                    ? 'Ahora la página de proyectos consume la API de GitHub y omite el repositorio README del perfil.'
+                    : 'The projects page now consumes the GitHub API and ignores the profile README repo.',
+
+            details: locale.value === 'pt'
+                ? [
+                    'Publicação do portfolio',
+                    'Consumo de API para exibir projetos',
+                    'Ignora o repositório fernanduandrade',
+                ]
+                : locale.value === 'es'
+                    ? [
+                        'Publicación del portafolio',
+                        'Consumo de API para mostrar proyectos',
+                        'Ignora el repositorio fernanduandrade',
+                    ]
+                    : [
+                        'Portfolio published',
+                        'API consumption to display projects',
+                        'Ignore fernanduandrade repo',
+                    ],
+        },
+        {
             date: '2026-05-29',
             type: 'launch',
             title: locale.value === 'pt'

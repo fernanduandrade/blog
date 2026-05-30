@@ -936,17 +936,13 @@ img {
 
 .now-with-image {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr;
   gap: var(--space-10);
   align-items: start;
 }
 
 .now-image {
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  aspect-ratio: 4/3;
-  background: var(--bg-subtle);
+  display: none;
 }
 
 /* ===== LANG SWITCHER ===== */

@@ -68,12 +68,6 @@
 
         <p class="now-last-updated">{{ $t('now.lastUpdated') }} {{ formatDate(lastUpdated) }}</p>
       </div>
-
-      <div class="now-image">
-        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--text-faint);font-size:0.8rem;background:var(--bg-subtle);">
-          📸
-        </div>
-      </div>
     </div>
   </div>
 </template>
