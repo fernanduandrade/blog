@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     defaultLocale: 'pt',
     lazy: true,
     langDir: 'i18n/',
-    strategy: 'prefix_except_default',
+    strategy: 'prefix',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
         default: 'github-light',
         dark: 'github-dark',
       },
-      langs: ['js', 'ts', 'vue', 'html', 'css', 'bash', 'json', 'yaml', 'markdown', 'python'],
+      langs: ['js', 'ts', 'vue', 'cs', 'html', 'css', 'bash', 'json', 'yaml', 'markdown', 'python'],
     },
     markdown: {
       toc: {
@@ -58,8 +58,12 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap',
         },
+        {
+          rel: 'icon',
+          href: '/favicon.ico'
+        }
       ],
     },
   },

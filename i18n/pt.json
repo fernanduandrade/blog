@@ -3,12 +3,12 @@
     "home": "Home",
     "blog": "Blog",
     "projects": "Projetos",
-    "uses": "Ferramentas",
+    "changelog": "Changelog",
     "now": "Agora"
   },
   "hero": {
     "role": "Software Engineer.",
-    "bio": "Construo coisas úteis, contribuo para o open source e escrevo sobre software, produtividade e sistemas."
+    "bio": "Construindo plataformas SaaS escaláveis, sistemas distribuídos e aplicações GIS — resolvendo desafios de performance e arquitetura pelo caminho."
   },
   "home": {
     "latestPosts": "Últimas postagens",
@@ -16,7 +16,8 @@
     "projects": "Projetos",
     "viewAllProjects": "Ver todos →",
     "now": "Agora",
-    "moreOnNow": "Mais na página agora →"
+      "moreOnNow": "Mais na página agora →",
+      "cvTitle": "Baixar currículo"
   },
   "blog": {
     "title": "Blog",
@@ -26,7 +27,10 @@
       "engineering": "Engenharia",
       "productivity": "Produtividade",
       "building": "Construindo",
-      "life": "Vida"
+      "life": "Vida",
+      "testing": "Teste",
+      "webdevelopment": "Desenvolvimento Web",
+      "cloud": "Cloud"
     }
   },
   "projects": {
@@ -52,18 +56,54 @@
     "subtitle": "O que estou fazendo agora.",
     "lastUpdated": "Última atualização:",
     "sections": {
-      "focus": "Foco",
-      "learning": "Aprendendo",
-      "building": "Construindo",
-      "thinkingAbout": "Pensando sobre",
-      "listening": "Ouvindo"
+      "focus": {
+        "title": "Foco",
+        "content": "Estudando arquitetura de software, escalabilidade e tentando construir projetos menores com mais consistência e qualidade."
+      },
+      "learning": {
+        "title": "Aprendendo",
+        "content": "Arquitetura de sistemas, MCP, computação em nuvem, AWS, Kubernetes e como construir aplicações distribuídas."
+      },
+      "building": {
+        "title": "Construindo",
+        "content": "Melhorando meu portfolio, experimentando ideias de SaaS e desenvolvendo ferramentas voltadas para produtividade e desenvolvimento."
+      },
+      "thinkingAbout": {
+        "title": "Pensando sobre",
+        "content": "Simplicidade, software sustentável, pensamento de longo prazo e construir um corpo de trabalho relevante."
+      },
+      "listening": {
+        "title": "Ouvindo",
+        "content": "Rock, Sertajeno e MPB.",
+        "playlistLabel": "Minha playlist",
+        "openInSpotify": "Abrir no Spotify"
+      }
     }
   },
   "article": {
     "onThisPage": "Nesta página",
     "share": "Compartilhar",
     "minRead": "min de leitura",
-    "backToBlog": "Blog"
+    "backToBlog": "Blog",
+    "copy": "Copiar",
+    "copied": "Copiado!"
+  },
+  "notFound": {
+    "message": "Página não encontrada",
+    "description": "A página que você está procurando não existe.",
+    "backHome": "Voltar para o início",
+    "backBlog": "Voltar para o blog"
+  },
+  "changelog": {
+    "title": "Changelog",
+    "subtitle": "Histórico de mudanças, novos posts e atualizações do portfólio.",
+    "types": {
+      "post": "Post",
+      "feature": "Feature",
+      "fix": "Correção",
+      "update": "Atualização",
+      "launch": "Lançamento"
+    }
   },
   "footer": {
     "builtWith": "Construído com Nuxt e MDX.",

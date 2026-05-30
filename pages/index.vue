@@ -19,6 +19,13 @@
           <a href="mailto:fernandu.contact@gmail.com" class="hero-link">
             <IconEmail /> Email
           </a>
+          <a
+            :href="locale === 'pt' ? '/curriculum/CV_PT.pdf' : '/curriculum/CV_EN.pdf'"
+            class="hero-link"
+            :download="locale === 'pt' ? 'CV-PT-BR.pdf' : 'CV-EN.pdf'"
+          >
+            [ {{ $t('home.cvTitle') }} ]
+          </a>
         </div>
       </section>
 
@@ -41,7 +48,7 @@
               <div class="post-excerpt">{{ post.description }}</div>
             </div>
             <span v-if="post.category" class="post-tag" :class="post.category.toLowerCase()">
-              {{ $t(`blog.categories.${post.category.toLowerCase()}`) }}
+              {{ categoryLabel(post.category) }}
             </span>
           </NuxtLinkLocale>
         </div>
@@ -113,7 +120,7 @@ const latestPosts = computed(() => posts.value || [])
 
 function postHref(post) {
   if (!post?._path) return '/blog'
-  return locale.value === 'pt' ? post._path.replace(/^\/pt/, '') : post._path
+  return post._path
 }
 
 // Featured projects (static data)
@@ -138,7 +145,7 @@ const featuredProjects = computed(() => [
         ? 'Herramienta CLI para crear y gestionar proyectos propios.'
         : 'CLI tool to scaffold and manage side projects.',
     tech: 'TypeScript',
-    url: 'https://github.com/fernandoandrade/unbuild',
+    url: 'https://github.com/fernanduandrade/unbuild',
   },
   {
     icon: '📖',
@@ -168,5 +175,22 @@ function formatDate(dateStr) {
     month: 'short',
     day: 'numeric',
   })
+}
+
+function formatCategory(category) {
+  return category
+    .toString()
+    .trim()
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase())
+}
+
+function categoryLabel(category) {
+  if (!category) return ''
+  const key = category.toString().trim().toLowerCase()
+  const translation = t(`blog.categories.${key}`)
+  if (translation && translation !== `blog.categories.${key}`) return translation
+  return formatCategory(category)
 }
 </script>

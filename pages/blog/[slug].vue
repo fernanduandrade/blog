@@ -5,18 +5,27 @@
       <div class="article-breadcrumb">
         <NuxtLinkLocale to="/blog">{{ $t('article.backToBlog') }}</NuxtLinkLocale>
         <span>›</span>
+        <span v-if="post.category" class="article-category">{{ categoryLabel }}</span>
+        <span v-if="post.category">›</span>
         <span>{{ post.title }}</span>
       </div>
       <div class="article-info">
         <span>{{ formatDate(post.date) }}</span>
         <span v-if="post.category">·</span>
-        <span v-if="post.category" class="post-tag" :class="post.category.toLowerCase()">
-          {{ $t(`blog.categories.${post.category.toLowerCase()}`) }}
-        </span>
+        <span v-if="post.category" class="article-category">{{ categoryLabel }}</span>
         <span v-if="post.readingTime">·</span>
         <span v-if="post.readingTime">{{ post.readingTime }} {{ $t('article.minRead') }}</span>
       </div>
       <h1 class="article-title">{{ post.title }}</h1>
+      <div class="post-tags" v-if="post.tags?.length">
+        <span
+          v-for="tag in post.tags"
+          :key="tag"
+          class="post-tag tag-chip"
+        >
+          {{ tag }}
+        </span>
+      </div>
       <p v-if="post.description" class="article-lead">{{ post.description }}</p>
     </div>
 
@@ -83,6 +92,62 @@ const { data: post } = await useAsyncData(`post-${locale.value}-${slug}`, () =>
   queryContent(path).findOne()
 )
 
+const categoryKey = computed(() => post.value?.category?.toString().trim().toLowerCase())
+const categoryLabel = computed(() => {
+  const key = categoryKey.value
+  if (!key) return ''
+
+  const translation = t(`blog.categories.${key}`)
+  if (translation && translation !== `blog.categories.${key}`) return translation
+
+  const rawCategory = post.value?.category?.toString().trim() || ''
+  return rawCategory
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase())
+})
+
+const keywords = computed(() => {
+  const category = post.value?.category
+  const tags = post.value?.tags ?? []
+  return [...new Set([category, ...tags].filter(Boolean))].join(', ')
+})
+
+if (!post.value) {
+  navigateTo(`/${locale.value}/blog`)
+}
+
+onMounted(() => {
+  if (!process.client) return
+
+  document.querySelectorAll('article.prose pre').forEach(pre => {
+    if (pre.querySelector('.code-copy-button')) return
+
+    const button = document.createElement('button')
+    button.type = 'button'
+    button.className = 'code-copy-button'
+    button.textContent = t('article.copy')
+
+    button.addEventListener('click', async () => {
+      const code = pre.querySelector('code')?.innerText || ''
+      if (!code) return
+
+      try {
+        await navigator.clipboard.writeText(code)
+        button.textContent = t('article.copied')
+        window.setTimeout(() => {
+          button.textContent = t('article.copy')
+        }, 1500)
+      } catch (err) {
+        console.error('Copy failed', err)
+      }
+    })
+
+    pre.style.position = 'relative'
+    pre.appendChild(button)
+  })
+})
+
 if (post.value) {
   useSeoMeta({
     title: `${post.value.title} — Fernando Andrade`,
@@ -91,12 +156,15 @@ if (post.value) {
     ogDescription: post.value.description,
     ogType: 'article',
     twitterCard: 'summary_large_image',
+    meta: [
+      { name: 'keywords', content: keywords.value },
+    ],
   })
 }
 
 const shareUrl = computed(() => {
   if (process.client) return window.location.href
-  return `https://fernandoandrade.dev${route.path}`
+  return `https://fernanduandrade.com${route.path}`
 })
 
 function formatDate(dateStr) {
@@ -108,5 +176,17 @@ function formatDate(dateStr) {
     month: 'long',
     day: 'numeric',
   })
+}
+
+function tagColorStyles(tag) {
+  const palette = [
+    { color: 'var(--accent-blue)', backgroundColor: 'rgba(56, 178, 207, 0.14)' },
+    { color: 'var(--accent-orange)', backgroundColor: 'rgba(245, 130, 32, 0.14)' },
+    { color: 'var(--accent-green)', backgroundColor: 'rgba(54, 194, 123, 0.14)' },
+    { color: 'var(--accent-purple)', backgroundColor: 'rgba(161, 102, 255, 0.12)' },
+    { color: 'var(--text)', backgroundColor: 'rgba(102, 112, 133, 0.12)' },
+  ]
+  const index = Array.from(tag.toString().trim().toLowerCase()).reduce((sum, char) => sum + char.charCodeAt(0), 0) % palette.length
+  return palette[index]
 }
 </script>

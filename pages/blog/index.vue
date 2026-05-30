@@ -32,7 +32,7 @@
           <div class="post-excerpt">{{ post.description }}</div>
         </div>
         <span v-if="post.category" class="post-tag" :class="post.category.toLowerCase()">
-          {{ $t(`blog.categories.${post.category.toLowerCase()}`) }}
+          {{ categoryLabel(post.category) }}
         </span>
       </NuxtLinkLocale>
     </div>
@@ -49,13 +49,21 @@ useSeoMeta({
 
 const activeCategory = ref('all')
 
-const categories = computed(() => [
-  { value: 'all', label: t('blog.all') },
-  { value: 'engineering', label: t('blog.categories.engineering') },
-  { value: 'productivity', label: t('blog.categories.productivity') },
-  { value: 'building', label: t('blog.categories.building') },
-  { value: 'life', label: t('blog.categories.life') },
-])
+const categories = computed(() => {
+  const list = [{ value: 'all', label: t('blog.all') }]
+  const seen = new Set()
+
+  ;(posts.value || []).forEach((post) => {
+    const category = post.category?.toString().trim().toLowerCase()
+    if (!category || seen.has(category)) return
+    seen.add(category)
+    const label = t(`blog.categories.${category}`) ||
+      `${category.charAt(0).toUpperCase()}${category.slice(1)}`
+    list.push({ value: category, label })
+  })
+
+  return list
+})
 
 const { data: posts } = await useAsyncData(`blog-posts-${locale.value}`, () =>
   queryContent(`/${locale.value}/blog`)
@@ -71,7 +79,7 @@ const filteredPosts = computed(() => {
 
 function postHref(post) {
   if (!post?._path) return '/blog'
-  return locale.value === 'pt' ? post._path.replace(/^\/pt/, '') : post._path
+  return post._path
 }
 
 function formatDate(dateStr) {
@@ -83,5 +91,22 @@ function formatDate(dateStr) {
     month: 'short',
     day: 'numeric',
   })
+}
+
+function formatCategory(category) {
+  return category
+    .toString()
+    .trim()
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase())
+}
+
+function categoryLabel(category) {
+  if (!category) return ''
+  const key = category.toString().trim().toLowerCase()
+  const translation = t(`blog.categories.${key}`)
+  if (translation && translation !== `blog.categories.${key}`) return translation
+  return formatCategory(category)
 }
 </script>

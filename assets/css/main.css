@@ -1,6 +1,6 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'DM Mono', 'Fira Code', monospace;
   --font-serif: 'DM Serif Display', Georgia, serif;
 
@@ -175,19 +175,21 @@ img {
 .nav-links a.router-link-active,
 .nav-links a.active {
   color: var(--text);
+  font-weight: 600;
 }
 
 .nav-links a.router-link-active::after,
 .nav-links a.active::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--accent-green);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.12);
 }
 
 .nav-actions {
@@ -342,22 +344,65 @@ img {
 }
 
 .post-tag {
-  font-size: 0.6875rem;
-  padding: 2px 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.9rem;
   border-radius: var(--radius-full);
   background: var(--tag-bg);
   color: var(--tag-text);
   white-space: nowrap;
-  margin-top: 3px;
+  margin: 0.25rem 0.5rem 0 0;
   border: 1px solid var(--border);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+}
+
+.article-category {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.post-tag.tag-chip {
+  background: var(--bg-secondary);
+  color: var(--text);
+  border-color: transparent;
 }
 
 .post-tag.engineering { color: var(--accent-blue); border-color: color-mix(in srgb, var(--accent-blue) 30%, transparent); background: color-mix(in srgb, var(--accent-blue) 8%, transparent); }
 .post-tag.productivity { color: var(--accent-orange); border-color: color-mix(in srgb, var(--accent-orange) 30%, transparent); background: color-mix(in srgb, var(--accent-orange) 8%, transparent); }
 .post-tag.building { color: var(--text-muted); border-color: var(--border); background: var(--tag-bg); }
 .post-tag.life { color: var(--accent-green); border-color: color-mix(in srgb, var(--accent-green) 30%, transparent); background: color-mix(in srgb, var(--accent-green) 8%, transparent); }
+
+/* Spotify embed */
+.spotify-embed {
+  margin-top: 1rem;
+}
+.spotify-embed iframe {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.spotify-links {
+  margin-top: 0.5rem;
+}
+.spotify-links a {
+  color: var(--accent-blue);
+  font-weight: 500;
+}
 
 /* ===== PROJECT CARDS ===== */
 .projects-grid {
@@ -724,6 +769,7 @@ img {
   overflow-x: auto;
   margin: var(--space-6) 0;
   font-size: 0.875rem;
+  position: relative;
 }
 
 .prose pre code {
@@ -731,6 +777,25 @@ img {
   border: none;
   padding: 0;
   border-radius: 0;
+}
+
+.code-copy-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.code-copy-button:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-1px);
 }
 
 .prose img {

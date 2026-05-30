@@ -3,13 +3,12 @@
     <div class="container footer-inner">
       <div class="footer-copy">
         <div>© {{ new Date().getFullYear() }} Fernando Andrade</div>
-        <div>{{ $t('footer.builtWith') }}</div>
       </div>
       <div class="footer-links">
-        <a href="https://github.com/fernandoandrade" target="_blank" rel="noopener" class="footer-link" title="GitHub">
+        <a href="https://github.com/fernanduandrade" target="_blank" rel="noopener" class="footer-link" title="GitHub">
           <IconGithub />
         </a>
-        <a href="https://linkedin.com/in/fernandoandrade" target="_blank" rel="noopener" class="footer-link" title="LinkedIn">
+        <a href="https://linkedin.com/in/fernanduandrade" target="_blank" rel="noopener" class="footer-link" title="LinkedIn">
           <IconLinkedin />
         </a>
         <a href="/feed.xml" class="footer-link" title="RSS">

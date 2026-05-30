@@ -3,12 +3,12 @@
     "home": "Home",
     "blog": "Blog",
     "projects": "Projects",
-    "uses": "Uses",
+    "changelog": "Changelog",
     "now": "Now"
   },
   "hero": {
     "role": "Software Engineer from Brazil.",
-    "bio": "I build useful things, contribute to open source and write about software, productivity and systems."
+    "bio": "Building scalable SaaS platforms, distributed systems and GIS applications — solving performance and architecture challenges along the way."
   },
   "home": {
     "latestPosts": "Latest posts",
@@ -16,7 +16,8 @@
     "projects": "Projects",
     "viewAllProjects": "View all projects →",
     "now": "Now",
-    "moreOnNow": "More on my now page →"
+      "moreOnNow": "More on my now page →",
+      "cvTitle": "Download Resume"
   },
   "blog": {
     "title": "Blog",
@@ -26,7 +27,10 @@
       "engineering": "Engineering",
       "productivity": "Productivity",
       "building": "Building",
-      "life": "Life"
+      "life": "Life",
+      "testing": "Testing",
+      "webdevelopment": "Web Development",
+      "cloud": "Cloud"
     }
   },
   "projects": {
@@ -52,18 +56,54 @@
     "subtitle": "What I'm doing right now.",
     "lastUpdated": "Last updated:",
     "sections": {
-      "focus": "Focus",
-      "learning": "Learning",
-      "building": "Building",
-      "thinkingAbout": "Thinking about",
-      "listening": "Listening"
+      "focus": {
+        "title": "Focus",
+        "content": "Studying software architecture, scalability and trying to build smaller projects with more consistency and quality."
+      },
+      "learning": {
+        "title": "Learning",
+        "content": "System architecture, MCP, cloud computing, AWS, Kubernetes and how to build distributed applications."
+      },
+      "building": {
+        "title": "Building",
+        "content": "Improving my portfolio, experimenting with SaaS ideas and developing tools focused on productivity and development."
+      },
+      "thinkingAbout": {
+        "title": "Thinking about",
+        "content": "Simplicity, sustainable software, long-term thinking and building a relevant body of work."
+      },
+      "listening": {
+        "title": "Listening",
+        "content": "Rock, indie, folk and anything with good lyrics.",
+        "playlistLabel": "My playlist",
+        "openInSpotify": "Open in Spotify"
+      }
     }
   },
   "article": {
     "onThisPage": "On this page",
     "share": "Share",
     "minRead": "min read",
-    "backToBlog": "Blog"
+    "backToBlog": "Blog",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "notFound": {
+    "message": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "backHome": "Back to home",
+    "backBlog": "Back to blog"
+  },
+  "changelog": {
+    "title": "Changelog",
+    "subtitle": "History of changes, new posts, and portfolio updates.",
+    "types": {
+      "post": "Post",
+      "feature": "Feature",
+      "fix": "Fix",
+      "update": "Update",
+      "launch": "Launch"
+    }
   },
   "footer": {
     "builtWith": "Built with Nuxt and MDX.",
