@@ -61,22 +61,22 @@
           <NuxtLinkLocale to="/projects" class="view-all">{{ $t('home.viewAllProjects') }}</NuxtLinkLocale>
         </div>
         <div class="projects-grid">
-          <NuxtLinkLocale
+          <a
             v-for="project in featuredProjects"
-            :key="project._path"
-            :to="project.url || project._path"
+            :key="project.repository"
+            :href="projectHref(project)"
             class="project-card animate-in"
-            :target="project.url ? '_blank' : undefined"
-            :rel="project.url ? 'noopener' : undefined"
+            target="_blank"
+            rel="noopener"
           >
             <div class="project-icon">{{ project.icon }}</div>
             <div class="project-name">{{ project.name }}</div>
             <div class="project-desc">{{ project.description }}</div>
             <div class="project-tech">
               <span class="tech-dot"></span>
-              {{ project.tech }}
+              {{ projectTech(project) }}
             </div>
-          </NuxtLinkLocale>
+          </a>
         </div>
       </section>
 
@@ -88,7 +88,7 @@
         </div>
         <div class="now-item">
           <span class="now-dot"></span>
-          <span>{{ currentNow }}</span>
+          <span>{{ t('now.sections.focus.content') }}</span>
         </div>
       </section>
     </div>
@@ -96,6 +96,8 @@
 </template>
 
 <script setup>
+import { useGithubProjects } from '~/composables/useGithubProjects'
+
 const { locale, t } = useI18n()
 
 // SEO
@@ -118,53 +120,24 @@ const { data: posts } = await useAsyncData(`home-posts-${locale.value}`, () =>
 
 const latestPosts = computed(() => posts.value || [])
 
+const { data: githubProjects } = useGithubProjects()
+
+const featuredProjects = computed(() => {
+  return githubProjects.value ? githubProjects.value.slice(0, 3) : []
+})
+
+function projectHref(project) {
+  return project.pageUrl || project.repository
+}
+
+function projectTech(project) {
+  return project.tech.join(' · ')
+}
+
 function postHref(post) {
   if (!post?._path) return '/blog'
   return post._path
 }
-
-// Featured projects (static data)
-const featuredProjects = computed(() => [
-  {
-    icon: 'U',
-    name: 'Letter U',
-    description: locale.value === 'pt'
-      ? 'Uma plataforma de blogging minimalista para escritores.'
-      : locale.value === 'es'
-        ? 'Una plataforma de blogging minimalista para escritores.'
-        : 'A minimal blogging platform built for writers.',
-    tech: 'TypeScript',
-    url: 'https://github.com/fernandoandrade/letter-u',
-  },
-  {
-    icon: '>_',
-    name: 'Unbuild',
-    description: locale.value === 'pt'
-      ? 'Ferramenta CLI para scaffoldar e gerenciar side projects.'
-      : locale.value === 'es'
-        ? 'Herramienta CLI para crear y gestionar proyectos propios.'
-        : 'CLI tool to scaffold and manage side projects.',
-    tech: 'TypeScript',
-    url: 'https://github.com/fernanduandrade/unbuild',
-  },
-  {
-    icon: '📖',
-    name: 'ReadKit',
-    description: locale.value === 'pt'
-      ? 'Um app de lista de leitura para salvar e organizar artigos.'
-      : locale.value === 'es'
-        ? 'Una app de lista de lectura para guardar y organizar artículos.'
-        : 'A reading list app to save and organize articles.',
-    tech: 'TypeScript',
-    url: 'https://github.com/fernandoandrade/readkit',
-  },
-])
-
-const currentNow = computed(() => {
-  if (locale.value === 'pt') return 'Trabalhando em novas ideias, lendo sobre compiladores e programação de sistemas.'
-  if (locale.value === 'es') return 'Trabajando en nuevas ideas, leyendo sobre compiladores y programación de sistemas.'
-  return 'Working on new ideas, reading about compilers and systems programming.'
-})
 
 function formatDate(dateStr) {
   if (!dateStr) return ''

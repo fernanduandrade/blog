@@ -1,3 +1,5 @@
+import { useSeoMeta } from "nuxt/app"
+
 export function useSeo(options: {
   title?: string
   description?: string

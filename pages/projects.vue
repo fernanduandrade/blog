@@ -34,8 +34,8 @@
         </div>
         <div class="project-links">
           <a
-            v-if="project.github"
-            :href="project.github"
+            v-if="project.repository"
+            :href="project.repository"
             target="_blank"
             rel="noopener"
             class="project-link-btn"
@@ -44,8 +44,8 @@
             {{ $t('projects.viewOnGithub') }}
           </a>
           <a
-            v-if="project.demo"
-            :href="project.demo"
+            v-if="project.pageUrl"
+            :href="project.pageUrl"
             target="_blank"
             rel="noopener"
             class="project-link-btn"
@@ -60,6 +60,8 @@
 </template>
 
 <script setup>
+import { useGithubProjects } from '~/composables/useGithubProjects'
+
 const { locale, t } = useI18n()
 
 useSeoMeta({
@@ -67,6 +69,7 @@ useSeoMeta({
   description: t('projects.subtitle'),
 })
 
+const { data: githubProjects } = useGithubProjects()
 const activeFilter = ref('all')
 
 const filters = computed(() => [
@@ -76,48 +79,10 @@ const filters = computed(() => [
   { value: 'tools', label: t('projects.tools') },
 ])
 
-const allProjects = computed(() => {
-  const descriptions = {
-    'letter-u': {
-      pt: 'Uma plataforma de blogging minimalista construída para escritores.',
-      en: 'A minimal blogging platform built for writers.',
-      es: 'Una plataforma de blogging minimalista para escritores.',
-    },
-    'unbuild': {
-      pt: 'Ferramenta CLI para scaffoldar e gerenciar side projects.',
-      en: 'CLI tool to scaffold and manage side projects.',
-      es: 'Herramienta CLI para crear y gestionar proyectos propios.',
-    },
-    'readkit': {
-      pt: 'App de lista de leitura para salvar e organizar artigos.',
-      en: 'A reading list app to save and organize articles.',
-      es: 'App de lista de lectura para guardar y organizar artículos.',
-    },
-    'dotfiles': {
-      pt: 'Meu ambiente de desenvolvimento pessoal e configurações.',
-      en: 'My personal development environment and configuration.',
-      es: 'Mi entorno de desarrollo personal y configuración.',
-    },
-    'httpc': {
-      pt: 'Minha configuração pessoal HTTPie e atalhos.',
-      en: 'My personal HTTPie configuration and shortcuts.',
-      es: 'Mi configuración personal de HTTPie y atajos.',
-    },
-  }
-
-  const l = locale.value
-
-  return [
-    { icon: 'U', name: 'Letter U', description: descriptions['letter-u'][l], tech: ['TypeScript', 'Next.js', 'MDX'], category: 'open-source', github: 'https://github.com/fernandoandrade/letter-u', demo: 'https://letteru.app' },
-    { icon: '>_', name: 'Unbuild', description: descriptions['unbuild'][l], tech: ['TypeScript', 'Node.js'], category: 'tools', github: 'https://github.com/fernandoandrade/unbuild' },
-    { icon: '📖', name: 'ReadKit', description: descriptions['readkit'][l], tech: ['TypeScript', 'Next.js'], category: 'side-projects', github: 'https://github.com/fernandoandrade/readkit' },
-    { icon: '⚙️', name: 'Dotfiles', description: descriptions['dotfiles'][l], tech: ['Nix', 'Home Manager'], category: 'open-source', github: 'https://github.com/fernandoandrade/dotfiles' },
-    { icon: '🔧', name: 'HTTPie Config', description: descriptions['httpc'][l], tech: ['HTTPie'], category: 'tools', github: 'https://github.com/fernandoandrade/httpie-config' },
-  ]
-})
-
 const filteredProjects = computed(() => {
-  if (activeFilter.value === 'all') return allProjects.value
-  return allProjects.value.filter(p => p.category === activeFilter.value)
+  const source = githubProjects.value || []
+
+  if (activeFilter.value === 'all') return source
+  return source.filter(p => p.category === activeFilter.value)
 })
 </script>

@@ -1,13 +1,16 @@
-export default defineNuxtConfig({
-  devtools: { enabled: true },
+import { fileURLToPath } from 'node:url'
 
+export default defineNuxtConfig({
+  alias: {
+    '~': fileURLToPath(new URL('./', import.meta.url)),
+  },
+  devtools: { enabled: true },
   modules: [
     '@nuxt/content',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
     '@vueuse/nuxt',
   ],
-
   colorMode: {
     preference: 'system',
     fallback: 'light',
