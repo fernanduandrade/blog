@@ -1,26 +1,34 @@
 {
   "nav": {
     "home": "Inicio",
-    "blog": "Blog",
+    "blog": "Artículos",
     "projects": "Proyectos",
     "changelog": "Changelog",
     "now": "Ahora"
   },
   "hero": {
     "role": "Software Engineer de Brasil.",
-    "bio": "Construyendo plataformas SaaS escalables, sistemas distribuidos y aplicaciones GIS — resolviendo desafíos de performance y arquitectura por el camino."
-  },
+      "bio": "Ingeniero de software con más de 6 años de experiencia construyendo sistemas distribuidos, aplicaciones GIS y soluciones escalables."
+    },
   "home": {
-    "latestPosts": "Últimas entradas",
+    "latestPosts": "Últimas publicaciones",
     "viewAllPosts": "Ver todas →",
     "projects": "Proyectos",
     "viewAllProjects": "Ver todos →",
     "now": "Ahora",
-      "moreOnNow": "Más en mi página ahora →",
-      "cvTitle": "Descargar CV"
+    "moreOnNow": "Más en mi página ahora →",
+    "cvTitle": "Descargar CV",
+    "seo": {
+      "title": "Fernando Andrade — Software Engineer",
+      "description": "Sitio web personal de Fernando Andrade. Ingeniero de software que escribe sobre arquitectura, sistemas distribuidos, computación en la nube y el software que construye.",
+      "ogTitle": "Fernando Andrade — Software Engineer",
+      "ogDescription": "Arquitectura, sistemas distribuidos, computación en la nube, GIS e ingeniería de software.",
+      "ogType": "website",
+      "twitterCard": "summary_large_image"
+    }
   },
   "blog": {
-    "title": "Blog",
+    "title": "Artículos",
     "subtitle": "Pensamientos sobre ingeniería de software, productividad y construir cosas que duran.",
     "all": "Todos",
     "categories": {
@@ -66,7 +74,7 @@
       },
       "building": {
         "title": "Construyendo",
-        "content": "Mejorando mi portfolio, experimentando ideas de SaaS y desarrollando herramientas enfocadas en productividad y desarrollo."
+        "content": "Mejorando mi portfolio, experimentando ideas y desarrollando herramientas enfocadas en productividad y desarrollo."
       },
       "thinkingAbout": {
         "title": "Pensando en",
@@ -84,7 +92,7 @@
     "onThisPage": "En esta página",
     "share": "Compartir",
     "minRead": "min de lectura",
-    "backToBlog": "Blog",
+    "backToBlog": "Artículos",
     "copy": "Copiar",
     "copied": "¡Copiado!"
   },
@@ -92,7 +100,7 @@
     "message": "Página no encontrada",
     "description": "La página que buscas no existe.",
     "backHome": "Volver al inicio",
-    "backBlog": "Volver al blog"
+    "backBlog": "Volver a los artículos"
   },
   "changelog": {
     "title": "Changelog",

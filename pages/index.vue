@@ -102,12 +102,12 @@ const { locale, t } = useI18n()
 
 // SEO
 useSeoMeta({
-  title: 'Fernando Andrade — Software Engineer',
-  description: 'Software Engineer from Brazil. I build useful things, contribute to open source and write about software, productivity and systems.',
-  ogTitle: 'Fernando Andrade — Software Engineer',
-  ogDescription: 'Software Engineer from Brazil. Building useful software and writing about code, systems and productivity.',
-  ogType: 'website',
-  twitterCard: 'summary',
+  title: t('home.seo.title'),
+  description: t('home.seo.description'),
+  ogTitle: t('home.seo.ogTitle'),
+  ogDescription: t('home.seo.ogDescription'),
+  ogType: t('home.seo.ogType'),
+  twitterCard: t('home.seo.twitterCard'),
 })
 
 // Fetch posts

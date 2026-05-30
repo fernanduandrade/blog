@@ -1,26 +1,34 @@
 {
   "nav": {
     "home": "Home",
-    "blog": "Blog",
+    "blog": "Artigos",
     "projects": "Projetos",
     "changelog": "Changelog",
     "now": "Agora"
   },
   "hero": {
     "role": "Software Engineer.",
-    "bio": "Construindo plataformas SaaS escaláveis, sistemas distribuídos e aplicações GIS — resolvendo desafios de performance e arquitetura pelo caminho."
+    "bio": "Especializado em arquitetura de software, sistemas distribuídos e aplicações GIS, ajudando equipes a construir soluções escaláveis e de alta performance."
   },
   "home": {
-    "latestPosts": "Últimas postagens",
+    "latestPosts": "Últimos artigos",
     "viewAllPosts": "Ver todas →",
     "projects": "Projetos",
     "viewAllProjects": "Ver todos →",
     "now": "Agora",
-      "moreOnNow": "Mais na página agora →",
-      "cvTitle": "Baixar currículo"
+    "moreOnNow": "Mais na página agora →",
+    "cvTitle": "Baixar currículo",
+    "seo": {
+      "title": "Fernando Andrade — Software Engineer",
+      "description": "Site pessoal de Fernando Andrade. Engenheiro de software escrevendo sobre arquitetura, sistemas distribuídos, computação em nuvem e o software que constrói.",
+      "ogTitle": "Fernando Andrade — Software Engineer",
+      "ogDescription": "Arquitetura, sistemas distribuídos, computação em nuvem, GIS e engenharia de software.",
+      "ogType": "website",
+      "twitterCard": "summary_large_image"
+    }
   },
   "blog": {
-    "title": "Blog",
+    "title": "Artigos",
     "subtitle": "Pensamentos sobre engenharia de software, produtividade e coisas que duram.",
     "all": "Todos",
     "categories": {
@@ -66,7 +74,7 @@
       },
       "building": {
         "title": "Construindo",
-        "content": "Melhorando meu portfolio, experimentando ideias de SaaS e desenvolvendo ferramentas voltadas para produtividade e desenvolvimento."
+        "content": "Melhorando meu portfolio, experimentando ideias e desenvolvendo ferramentas voltadas para produtividade e desenvolvimento."
       },
       "thinkingAbout": {
         "title": "Pensando sobre",
@@ -84,7 +92,7 @@
     "onThisPage": "Nesta página",
     "share": "Compartilhar",
     "minRead": "min de leitura",
-    "backToBlog": "Blog",
+    "backToBlog": "Artigos",
     "copy": "Copiar",
     "copied": "Copiado!"
   },
@@ -92,7 +100,7 @@
     "message": "Página não encontrada",
     "description": "A página que você está procurando não existe.",
     "backHome": "Voltar para o início",
-    "backBlog": "Voltar para o blog"
+    "backBlog": "Voltar para o artigos"
   },
   "changelog": {
     "title": "Changelog",

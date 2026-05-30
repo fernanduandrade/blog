@@ -1,26 +1,34 @@
 {
   "nav": {
     "home": "Home",
-    "blog": "Blog",
+    "blog": "Articles",
     "projects": "Projects",
     "changelog": "Changelog",
     "now": "Now"
   },
   "hero": {
     "role": "Software Engineer from Brazil.",
-    "bio": "Building scalable SaaS platforms, distributed systems and GIS applications — solving performance and architecture challenges along the way."
+    "bio": "Specializing in software architecture, distributed systems and GIS applications, helping teams build scalable and high-performance solutions."
   },
   "home": {
-    "latestPosts": "Latest posts",
+    "latestPosts": "Latest articles",
     "viewAllPosts": "View all posts →",
     "projects": "Projects",
     "viewAllProjects": "View all projects →",
     "now": "Now",
-      "moreOnNow": "More on my now page →",
-      "cvTitle": "Download Resume"
+    "moreOnNow": "More on my now page →",
+    "cvTitle": "Download Resume",
+    "seo": {
+      "title": "Fernando Andrade — Software Engineer",
+      "description": "Personal website of Fernando Andrade. Software engineer writing about architecture, distributed systems, cloud computing and the software he builds.",
+      "ogTitle": "Fernando Andrade — Software Engineer",
+      "ogDescription": "Architecture, distributed systems, cloud computing, GIS and software engineering.",
+      "ogType": "website",
+      "twitterCard": "summary_large_image"
+    }
   },
   "blog": {
-    "title": "Blog",
+    "title": "Learning",
     "subtitle": "Thoughts on software engineering, productivity, and building things that last.",
     "all": "All",
     "categories": {
@@ -66,7 +74,7 @@
       },
       "building": {
         "title": "Building",
-        "content": "Improving my portfolio, experimenting with SaaS ideas and developing tools focused on productivity and development."
+        "content": "Improving my portfolio, experimenting with ideas and developing tools focused on productivity and development."
       },
       "thinkingAbout": {
         "title": "Thinking about",
@@ -84,7 +92,7 @@
     "onThisPage": "On this page",
     "share": "Share",
     "minRead": "min read",
-    "backToBlog": "Blog",
+    "backToBlog": "Articles",
     "copy": "Copy",
     "copied": "Copied!"
   },
@@ -92,7 +100,7 @@
     "message": "Page not found",
     "description": "The page you are looking for does not exist.",
     "backHome": "Back to home",
-    "backBlog": "Back to blog"
+    "backBlog": "Back to articles"
   },
   "changelog": {
     "title": "Changelog",
