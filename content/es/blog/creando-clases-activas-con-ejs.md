@@ -1,6 +1,6 @@
 ---
 title: Creando clases activas con EJS
-description: Algunas ideas y principios que me ayudan a escribir software más mantenible.
+description: 
 date: 2021-05-29
 category: WebDevelopment
 tags:
