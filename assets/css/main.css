@@ -305,6 +305,7 @@ img {
 .post-list {
   display: flex;
   flex-direction: column;
+  gap: var(--space-3);
 }
 
 .post-item {
@@ -312,13 +313,57 @@ img {
   grid-template-columns: 120px 1fr auto;
   gap: var(--space-4);
   align-items: start;
-  padding: var(--space-5) 0;
+  padding: var(--space-5);
+  border: 1px solid transparent;
   border-bottom: 1px solid var(--border);
-  transition: opacity var(--transition-fast);
+  border-radius: var(--radius-md);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
-.post-item:last-child { border-bottom: none; }
-.post-item:hover { opacity: 0.75; }
+.post-item:last-child { border-bottom: 1px solid var(--border); }
+.post-item:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: var(--border-strong);
+}
+
+.post-item-featured {
+  position: relative;
+  overflow: hidden;
+  border-color: color-mix(in srgb, var(--accent-green) 35%, var(--border));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-green) 8%, var(--bg)) 0%, color-mix(in srgb, var(--accent-green) 4%, var(--bg)) 100%);
+  box-shadow:
+    0 0 0 2px rgba(34, 197, 94, 0.12),
+    0 18px 36px color-mix(in srgb, var(--accent-green) 18%, transparent);
+}
+
+.post-item-featured::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(circle at top right, color-mix(in srgb, var(--accent-green) 18%, transparent), transparent 35%);
+  pointer-events: none;
+}
+
+.featured-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: var(--space-2);
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+.featured-pill::before {
+  content: "✦";
+  color: var(--accent-purple);
+}
 
 .post-date {
   font-size: 0.8125rem;
@@ -326,8 +371,6 @@ img {
   font-variant-numeric: tabular-nums;
   padding-top: 3px;
 }
-
-.post-info { }
 
 .post-title {
   font-size: 0.9375rem;
@@ -899,7 +942,6 @@ img {
   flex-shrink: 0;
 }
 
-.uses-info { }
 .uses-name { font-size: 0.875rem; font-weight: 500; color: var(--text); }
 .uses-desc { font-size: 0.8125rem; color: var(--text-muted); }
 

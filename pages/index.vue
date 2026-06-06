@@ -37,13 +37,15 @@
         </div>
         <div class="post-list">
           <NuxtLinkLocale
-            v-for="post in latestPosts"
+            v-for="(post, index) in latestPosts"
             :key="post._path"
             :to="postHref(post)"
-            class="post-item animate-in"
+            :class="['post-item', 'animate-in', { 'post-item-featured': index === 0 }]"
+            :aria-label="index === 0 ? `${t('home.featuredPostLabel')} — ${post.title}` : post.title"
           >
             <span class="post-date">{{ formatDate(post.date) }}</span>
             <div class="post-info">
+              <span v-if="index === 0" class="featured-pill">{{ $t('home.featuredPostLabel') }}</span>
               <div class="post-title">{{ post.title }}</div>
               <div class="post-excerpt">{{ post.description }}</div>
             </div>
