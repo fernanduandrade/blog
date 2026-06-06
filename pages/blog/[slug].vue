@@ -11,19 +11,18 @@
       </div>
       <div class="article-info">
         <span>{{ formatDate(post.date) }}</span>
-        <span v-if="post.category">·</span>
-        <span v-if="post.category" class="article-category">{{ categoryLabel }}</span>
         <span v-if="post.readingTime">·</span>
         <span v-if="post.readingTime">{{ post.readingTime }} {{ $t('article.minRead') }}</span>
       </div>
       <h1 class="article-title">{{ post.title }}</h1>
-      <div class="post-tags" v-if="post.tags?.length">
+      <div class="chip-row" v-if="post.category || post.tags?.length">
         <span
           v-for="tag in post.tags"
           :key="tag"
-          class="post-tag tag-chip"
+          class="chip chip-tag"
+          :style="tagColorStyles(tag)"
         >
-          {{ tag }}
+          #{{ tag }}
         </span>
       </div>
       <p v-if="post.description" class="article-lead">{{ post.description }}</p>
@@ -105,6 +104,11 @@ const categoryLabel = computed(() => {
     .replace(/([a-z])([A-Z])/g, '$1 $2')
     .replace(/[-_]/g, ' ')
     .replace(/\b\w/g, (char) => char.toUpperCase())
+})
+
+const categoryChipStyle = computed(() => {
+  if (!post.value?.category) return {}
+  return tagColorStyles(post.value.category)
 })
 
 const keywords = computed(() => {

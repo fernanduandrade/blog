@@ -55,6 +55,68 @@ useSeoMeta({
 const changelogEntries = computed(() => {
     const entries = [
         {
+            date: '2026-06-06',
+            type: 'post',
+            title: locale.value === 'pt'
+                ? 'Novo artigo: De 6 horas para 40 segundos'
+                : locale.value === 'es'
+                    ? 'Nuevo artículo: De 6 horas a 40 segundos'
+                    : 'New article: From 6 Hours to 40 Seconds',
+            description: locale.value === 'pt'
+                ? 'Um índice composto transformou um job crítico de produção de 6 horas para 40 segundos e mostrou como otimização de query impacta o dia a dia.'
+                : locale.value === 'es'
+                    ? 'Un índice compuesto transformó un job crítico de producción de 6 horas a 40 segundos y mostró cómo la optimización de consultas impacta el día a día.'
+                    : 'A composite index turned a critical production job from 6 hours to 40 seconds and showed how query optimization changes real-world operations.',
+            details: locale.value === 'pt'
+                ? [
+                    'Otimização de query em PostgreSQL',
+                    'Uso prático de índices compostos',
+                    'Aprendizado de performance em produção',
+                ]
+                : locale.value === 'es'
+                    ? [
+                        'Optimización de consultas en PostgreSQL',
+                        'Uso práctico de índices compuestos',
+                        'Aprendizaje de rendimiento en producción',
+                    ]
+                    : [
+                        'PostgreSQL query optimization',
+                        'Practical composite index usage',
+                        'Production performance lessons',
+                    ],
+        },
+        {
+            date: '2026-03-12',
+            type: 'post',
+            title: locale.value === 'pt'
+                ? 'Novo artigo: Do commit ao deploy com CI/CD na AWS'
+                : locale.value === 'es'
+                    ? 'Nuevo artículo: Del commit al despliegue con CI/CD en AWS'
+                    : 'New article: From Commit to Deployment with CI/CD on AWS',
+            description: locale.value === 'pt'
+                ? 'Um guia completo para montar pipeline de CI/CD com GitHub Actions, ECS e Terraform para automatizar deploys na AWS.'
+                : locale.value === 'es'
+                    ? 'Una guía completa para montar un pipeline de CI/CD con GitHub Actions, ECS y Terraform para automatizar despliegues en AWS.'
+                    : 'A complete guide to setting up a CI/CD pipeline with GitHub Actions, ECS, and Terraform to automate AWS deployments.',
+            details: locale.value === 'pt'
+                ? [
+                    'Pipeline CI/CD com GitHub Actions',
+                    'Infraestrutura como código com Terraform',
+                    'Deploy automatizado em ECS Fargate',
+                ]
+                : locale.value === 'es'
+                    ? [
+                        'Pipeline CI/CD con GitHub Actions',
+                        'Infraestructura como código con Terraform',
+                        'Despliegue automatizado en ECS Fargate',
+                    ]
+                    : [
+                        'CI/CD pipeline with GitHub Actions',
+                        'Infrastructure as code with Terraform',
+                        'Automated deployment on ECS Fargate',
+                    ],
+        },
+        {
             date: '2026-05-30',
             type: 'update',
             title: locale.value === 'pt'
