@@ -28,12 +28,6 @@
         <!-- Language Switcher -->
         <LangSwitcher />
 
-        <!-- Theme Toggle -->
-        <button class="icon-btn" @click="toggleTheme" :title="isDark ? 'Switch to light' : 'Switch to dark'">
-          <IconSun v-if="isDark" />
-          <IconMoon v-else />
-        </button>
-
         <!-- Mobile Menu Button -->
         <button class="mobile-menu-btn" @click="isMenuOpen = !isMenuOpen" :title="isMenuOpen ? 'Close menu' : 'Open menu'">
           <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -54,9 +48,7 @@
 <script setup>
 const route = useRoute()
 const { locale } = useI18n()
-const colorMode = useColorMode()
 
-const isDark = computed(() => colorMode.value === 'dark')
 const isMenuOpen = ref(false)
 
 // Close menu when route changes
@@ -77,9 +69,5 @@ function isActive(path) {
   }
 
   return route.path === localized || route.path.startsWith(`${localized}/`)
-}
-
-function toggleTheme() {
-  colorMode.preference = isDark.value ? 'light' : 'dark'
 }
 </script>
