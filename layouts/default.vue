@@ -11,13 +11,23 @@
 <script setup>
 const colorMode = useColorMode()
 
-// Apply color mode class to html element
-watch(() => colorMode.value, (val) => {
-  document.documentElement.className = val
+function applyLightTheme() {
+  colorMode.preference = 'light'
+  colorMode.value = 'light'
+
+  if (process.client) {
+    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.add('light')
+    document.documentElement.style.colorScheme = 'light'
+  }
+}
+
+watch(() => colorMode.value, () => {
+  applyLightTheme()
 }, { immediate: process.client })
 
 onMounted(() => {
-  document.documentElement.className = colorMode.value
+  applyLightTheme()
 })
 </script>
 
