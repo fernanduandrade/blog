@@ -53,7 +53,7 @@
 
 <script setup>
 const route = useRoute()
-const { locale, defaultLocale } = useI18n()
+const { locale } = useI18n()
 const colorMode = useColorMode()
 
 const isDark = computed(() => colorMode.value === 'dark')

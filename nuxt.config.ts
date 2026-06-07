@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     '@vercel/analytics'
   ],
   colorMode: {
-    preference: 'system',
+    preference: 'light',
     fallback: 'light',
     classSuffix: '',
   },
