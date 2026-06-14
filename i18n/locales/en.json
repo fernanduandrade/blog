@@ -4,7 +4,8 @@
     "blog": "Articles",
     "projects": "Projects",
     "changelog": "Changelog",
-    "now": "Now"
+    "now": "Now",
+    "bookmarks": "Bookmarks"
   },
   "hero": {
     "role": "Software Engineer from Brazil.",
@@ -103,6 +104,11 @@
     "description": "The page you are looking for does not exist.",
     "backHome": "Back to home",
     "backBlog": "Back to articles"
+  },
+  "bookmarks": {
+    "title": "Bookmarks",
+    "subtitle": "A collection of my readings.",
+    "empty": "No bookmarks found at the moment."
   },
   "changelog": {
     "title": "Changelog",

@@ -19,6 +19,9 @@
           <NuxtLinkLocale to="/now" :class="{ active: isActive('/now') }" @click="isMenuOpen = false">{{ $t('nav.now') }}</NuxtLinkLocale>
         </li>
         <li>
+          <NuxtLinkLocale to="/bookmarks" :class="{ active: isActive('/bookmarks') }" @click="isMenuOpen = false">{{ $t('nav.bookmarks') }}</NuxtLinkLocale>
+        </li>
+        <li>
           <NuxtLinkLocale to="/changelog" :class="{ active: isActive('/changelog') }" @click="isMenuOpen = false">{{ $t('nav.changelog') }}</NuxtLinkLocale>
         </li>
       </ul>

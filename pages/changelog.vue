@@ -55,6 +55,31 @@ useSeoMeta({
 const changelogEntries = computed(() => {
     const entries = [
         {
+            date: '2026-06-14',
+            type: 'launch',
+            title: locale.value === 'pt'
+                ? 'Adicionado seção de bookmarks'
+                : locale.value === 'es'
+                    ? 'Sección de marcadores añadida'
+                    : 'Bookmarks section added',
+            description: locale.value === 'pt'
+                ? 'Agora a página de bookmarks exibe uma lista de links salvos, agrupados por mês e ano, com data e título.'
+                : locale.value === 'es'
+                    ? 'Ahora la página de marcadores muestra una lista de enlaces guardados, agrupados por mes y año, con fecha y título.'
+                    : 'The bookmarks page now displays a list of saved links, grouped by month and year, with date and title.',
+            details: locale.value === 'pt'
+                ? [
+                    'Exibição de bookmarks salvos', 
+                ]
+                : locale.value === 'es'
+                    ? [
+                        'Visualización de marcadores guardados',
+                    ]
+                    : [
+                        'Display of saved bookmarks',
+                    ],
+        },
+        {
             date: '2026-06-06',
             type: 'post',
             title: locale.value === 'pt'
