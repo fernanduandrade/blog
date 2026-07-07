@@ -8,7 +8,6 @@ tags:
     - dotnet
     - tutorial
     - tdd
-readingTime: 8
 ---
 
 <h1 id="1-intro">1. Introdução</h1>

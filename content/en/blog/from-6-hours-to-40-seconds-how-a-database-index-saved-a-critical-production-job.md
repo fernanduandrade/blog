@@ -13,7 +13,6 @@ tags:
     - indexes
     - optimization
     - career
-readingTime: 7
 ---
 
 # From 6 Hours to 40 Seconds: How a Database Index Saved a Critical Production Job

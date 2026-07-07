@@ -8,7 +8,6 @@ tags:
   - ejs
   - javascript
   - node
-readingTime: 4
 ---
 
 [EJS](https://ejs.co/) is a template language that uses JavaScript to generate HTML, while also allowing templates and data to be shared across multiple pages. This post demonstrates how to use an **active** class to show users which page is currently being accessed in a Node.js application using EJS as the template engine.

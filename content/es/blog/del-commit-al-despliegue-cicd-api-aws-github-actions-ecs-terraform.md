@@ -8,7 +8,6 @@ tags:
   - dotnet
   - tutorial
   - aws
-readingTime: 12
 ---
 
 ## Introducción

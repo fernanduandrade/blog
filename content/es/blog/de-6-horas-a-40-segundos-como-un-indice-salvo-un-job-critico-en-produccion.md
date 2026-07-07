@@ -13,7 +13,6 @@ tags:
     - índices
     - optimización
     - carrera
-readingTime: 7
 ---
 
 # De 6 horas a 40 segundos: cómo un índice de base de datos salvó un job crítico en producción

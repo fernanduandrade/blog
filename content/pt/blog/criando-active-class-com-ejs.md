@@ -8,7 +8,6 @@ tags:
     - dotnet
     - tutorial
     - testing
-readingTime: 4
 ---
 
 [EJS](https://ejs.co/) é uma linguagem de template que utiliza javascript para gerar HTML, além de compartilhar templates e dados com outras páginas. Este post é para demonstrar como utilizar uma class **active** para demonstrar ao user a página que está sendo acessada no momento em uma aplicação Node utilizando EJS como template engine.

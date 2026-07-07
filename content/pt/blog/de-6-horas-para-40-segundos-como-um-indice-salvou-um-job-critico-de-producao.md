@@ -13,7 +13,6 @@ tags:
     - índices
     - otimização
     - carreira
-readingTime: 7
 ---
  
 # De 6 horas para 40 segundos: como um índice de banco de dados salvou um job crítico de produção

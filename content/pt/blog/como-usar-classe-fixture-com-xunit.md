@@ -8,7 +8,6 @@ tags:
     - dotnet
     - testing
     - csharp
-readingTime: 6
 ---
 
 

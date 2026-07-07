@@ -11,8 +11,8 @@
       </div>
       <div class="article-info">
         <span>{{ formatDate(post.date) }}</span>
-        <span v-if="post.readingTime">·</span>
-        <span v-if="post.readingTime">{{ post.readingTime }} {{ $t('article.minRead') }}</span>
+        <span v-if="readingTime">·</span>
+        <span v-if="readingTime">{{ readingTime }} {{ $t('article.minRead') }}</span>
       </div>
       <h1 class="article-title">{{ post.title }}</h1>
       <div class="chip-row" v-if="post.category || post.tags?.length">
@@ -90,6 +90,15 @@ const path = `/${locale.value}/blog/${slug}`
 const { data: post } = await useAsyncData(`post-${locale.value}-${slug}`, () =>
   queryContent(path).findOne()
 )
+
+const readingTime = computed(() => {
+  if (!post.value) return 0
+
+  if (post.value.readingTime) return Number(post.value.readingTime)
+
+  const rawContent = extractArticleText(post.value)
+  return calculateReadingTime(rawContent)
+})
 
 const categoryKey = computed(() => post.value?.category?.toString().trim().toLowerCase())
 const categoryLabel = computed(() => {
@@ -180,6 +189,47 @@ function formatDate(dateStr) {
     month: 'long',
     day: 'numeric',
   })
+}
+
+function extractArticleText(article) {
+  if (!article?.body?.children) return ''
+
+  const walk = (node) => {
+    if (typeof node === 'string') return node
+    if (Array.isArray(node)) return node.map(walk).filter(Boolean).join(' ')
+
+    if (node && typeof node === 'object') {
+      if (typeof node.value === 'string') return node.value
+      if (typeof node.text === 'string') return node.text
+
+      const childText = Object.keys(node)
+        .filter((key) => key !== 'props')
+        .map((key) => walk(node[key]))
+        .filter(Boolean)
+        .join(' ')
+
+      return childText
+    }
+
+    return ''
+  }
+
+  return walk(article.body.children)
+}
+
+function calculateReadingTime(content, wordsPerMinute = 250) {
+  if (!content) return 0
+
+  const plainText = String(content)
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[#>*`_\-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+  if (!plainText) return 0
+
+  const words = plainText.split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.ceil(words / wordsPerMinute))
 }
 
 function tagColorStyles(tag) {

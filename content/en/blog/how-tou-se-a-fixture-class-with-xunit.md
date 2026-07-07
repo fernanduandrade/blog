@@ -8,7 +8,6 @@ tags:
   - dotnet
   - testing
   - csharp
-readingTime: 6
 ---
 
 Hey everyone, hope you're doing well! I’d like to share a tip that I find very useful for people writing tests with xUnit: using Fixtures.

@@ -8,7 +8,6 @@ tags:
   - ejs
   - javascript
   - node
-readingTime: 4
 ---
 
 [EJS](https://ejs.co/) es un lenguaje de plantillas que utiliza JavaScript para generar HTML, además de permitir compartir plantillas y datos entre diferentes páginas. Este post demuestra cómo utilizar una clase **active** para mostrar al usuario qué página está siendo accedida actualmente en una aplicación Node.js usando EJS como motor de plantillas.
