@@ -80,6 +80,37 @@ const changelogEntries = computed(() => {
                     ],
         },
         {
+            date: '2026-07-08',
+            type: 'post',
+            title: locale.value === 'pt'
+                ? 'Novo artigo: O poder de um banco de grafos'
+                : locale.value === 'es'
+                    ? 'Nuevo artículo: El poder de una base de datos de grafos'
+                    : 'New article: The Power of Graph Databases',
+            description: locale.value === 'pt'
+                ? 'Um novo artigo explica como bancos de grafos ajudam a revelar relações ocultas e entender melhor seu negócio.'
+                : locale.value === 'es'
+                    ? 'Un nuevo artículo explica cómo las bases de datos de grafos ayudan a revelar relaciones ocultas y comprender mejor tu negocio.'
+                    : 'A new article explains how graph databases help reveal hidden relationships and better understand your business.',
+            details: locale.value === 'pt'
+                ? [
+                    'Bancos de grafos em cenários de negócio',
+                    'Exemplos práticos de modelagem de dados',
+                    'Benefícios para análise de relacionamentos',
+                ]
+                : locale.value === 'es'
+                    ? [
+                        'Bases de datos de grafos en escenarios de negocio',
+                        'Ejemplos prácticos de modelado de datos',
+                        'Beneficios para análisis de relaciones',
+                    ]
+                    : [
+                        'Graph databases in business scenarios',
+                        'Practical data modeling examples',
+                        'Benefits for relationship analysis',
+                    ],
+        },
+        {
             date: '2026-06-06',
             type: 'post',
             title: locale.value === 'pt'
@@ -215,7 +246,7 @@ const changelogEntries = computed(() => {
         },
     ]
 
-    return entries
+    return entries.sort((a, b) => b.date.localeCompare(a.date))
 })
 
 function formatDate(dateStr) {
