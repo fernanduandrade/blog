@@ -91,7 +91,7 @@ After running the full pipeline against the GitHub organization, you can query t
 MATCH p=()-[:INTERACTED_WITH]->() RETURN p LIMIT 25;
 ```
 
-![Graph of interactions among contributors](<Captura de tela 2026-07-08 205346-1.png>)
+![Graph of interactions among contributors](/images/blog/graph-interactions.png)
 
 Each `INTERACTED_WITH` edge represents a real interaction between two people within a repository (comment, review, mention). Just by looking at the image you can already spot sub-networks: a more isolated group on the left and a much more connected core on the right, revolving around names like Gabriel Vieira, Daniel Reis, and Ranie.
 
@@ -102,7 +102,7 @@ MATCH (p:Person)-[:CONTRIBUTED_TO]->(r:Repository { name: "4noobs" })
 RETURN p, r;
 ```
 
-![Graph of contributors to the 4noobs repository](<Captura de tela 2026-07-08 205324.png>)
+![Graph of contributors to the 4noobs repository](/images/blog/graph-contributors.png)
 
 This kind of visualization — a central node surrounded by everyone who has ever contributed — is exactly the kind of thing that, in SQL, would require a JOIN between `contributions` and `repositories` filtered by `repository_id`, and even then you'd still have to build the graph manually in some separate visualization tool. Here, it's born ready-made.
 
