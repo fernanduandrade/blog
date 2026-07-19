@@ -1,3 +1,8 @@
+# bmad
+_bmad
+.agents
+_bmad-output
+
 # Nuxt dev/build outputs
 .output
 .data

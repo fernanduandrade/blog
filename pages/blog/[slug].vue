@@ -86,6 +86,8 @@ const route = useRoute()
 
 const slug = route.params.slug
 const path = `/${locale.value}/blog/${slug}`
+const siteBaseUrl = 'https://fernanduandrade.com'
+const canonicalUrl = computed(() => `${siteBaseUrl}${route.path}`)
 
 const { data: post } = await useAsyncData(`post-${locale.value}-${slug}`, () =>
   queryContent(path).findOne()
@@ -126,6 +128,14 @@ const keywords = computed(() => {
   return [...new Set([category, ...tags].filter(Boolean))].join(', ')
 })
 
+const fallbackDescription = computed(() => {
+  if (post.value?.description) return post.value.description
+
+  const raw = extractArticleText(post.value)
+  const trimmed = raw.replace(/\s+/g, ' ').trim().slice(0, 160)
+  return trimmed || 'Article by Fernando Andrade on software architecture, distributed systems, cloud, GIS, and engineering.'
+})
+
 if (!post.value) {
   navigateTo(`/${locale.value}/blog`)
 }
@@ -164,21 +174,25 @@ onMounted(() => {
 if (post.value) {
   useSeoMeta({
     title: `${post.value.title} — Fernando Andrade`,
-    description: post.value.description,
+    description: post.value.description || fallbackDescription.value,
     ogTitle: post.value.title,
-    ogDescription: post.value.description,
+    ogDescription: post.value.description || fallbackDescription.value,
     ogType: 'article',
+    ogUrl: canonicalUrl.value,
     twitterCard: 'summary_large_image',
+    twitterTitle: post.value.title,
+    twitterDescription: post.value.description || fallbackDescription.value,
     meta: [
       { name: 'keywords', content: keywords.value },
+      { property: 'article:published_time', content: post.value.date },
+      ...(post.value?.category ? [{ property: 'article:section', content: categoryLabel.value }] : []),
+      ...(post.value?.tags?.map((tag) => ({ property: 'article:tag', content: tag })) ?? []),
     ],
+    link: [{ rel: 'canonical', href: canonicalUrl.value }],
   })
 }
 
-const shareUrl = computed(() => {
-  if (process.client) return window.location.href
-  return `https://fernanduandrade.com${route.path}`
-})
+const shareUrl = computed(() => canonicalUrl.value)
 
 function formatDate(dateStr) {
   if (!dateStr) return ''

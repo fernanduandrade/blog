@@ -9,7 +9,7 @@
   },
   "hero": {
     "role": "Software Engineer from Brazil.",
-    "bio": "Specializing in software architecture, distributed systems and GIS applications, helping teams build scalable and high-performance solutions."
+    "bio": "Building a public portfolio of software architecture, distributed systems, cloud, GIS, and engineering projects. Read articles, browse projects, and explore the stack behind what I build."
   },
   "home": {
     "latestPosts": "Latest articles",
@@ -22,9 +22,9 @@
     "cvTitle": "Download Resume",
     "seo": {
       "title": "Fernando Andrade — Software Engineer",
-      "description": "Personal website of Fernando Andrade. Software engineer writing about architecture, distributed systems, cloud computing and the software he builds.",
+      "description": "Personal website of Fernando Andrade. Explore my portfolio of software architecture, distributed systems, cloud, GIS, and technical articles.",
       "ogTitle": "Fernando Andrade — Software Engineer",
-      "ogDescription": "Architecture, distributed systems, cloud computing, GIS and software engineering.",
+      "ogDescription": "Portfolio and articles on software architecture, distributed systems, cloud, GIS, and engineering work.",
       "ogType": "website",
       "twitterCard": "summary_large_image"
     }

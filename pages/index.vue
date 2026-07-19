@@ -101,6 +101,12 @@
 import { useGithubProjects } from '~/composables/useGithubProjects'
 
 const { locale, t } = useI18n()
+const siteBaseUrl = 'https://fernanduandrade.com'
+const canonicalUrl = computed(() => {
+  if (locale.value === 'pt') return `${siteBaseUrl}/pt`
+  if (locale.value === 'es') return `${siteBaseUrl}/es`
+  return `${siteBaseUrl}`
+})
 
 // SEO
 useSeoMeta({
@@ -109,7 +115,18 @@ useSeoMeta({
   ogTitle: t('home.seo.ogTitle'),
   ogDescription: t('home.seo.ogDescription'),
   ogType: t('home.seo.ogType'),
+  ogUrl: canonicalUrl.value,
+  canonical: canonicalUrl.value,
   twitterCard: t('home.seo.twitterCard'),
+  twitterTitle: t('home.seo.ogTitle'),
+  twitterDescription: t('home.seo.ogDescription'),
+  meta: [
+    {
+      name: 'keywords',
+      content:
+        'software engineer portfolio, architecture, distributed systems, cloud, GIS, technical articles, projects, software blogs',
+    },
+  ],
 })
 
 // Fetch posts

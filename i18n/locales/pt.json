@@ -9,7 +9,7 @@
   },
   "hero": {
     "role": "Software Engineer.",
-    "bio": "Especializado em arquitetura de software, sistemas distribuídos e aplicações GIS, ajudando equipes a construir soluções escaláveis e de alta performance."
+    "bio": "Construindo um portfólio público de arquitetura de software, sistemas distribuídos, cloud, GIS e projetos de engenharia. Leia artigos, explore projetos e conheça a stack por trás do que construo."
   },
   "home": {
     "latestPosts": "Últimos artigos",
@@ -22,9 +22,9 @@
     "cvTitle": "Baixar currículo",
     "seo": {
       "title": "Fernando Andrade — Software Engineer",
-      "description": "Site pessoal de Fernando Andrade. Engenheiro de software escrevendo sobre arquitetura, sistemas distribuídos, computação em nuvem e o software que constrói.",
+      "description": "Site pessoal de Fernando Andrade. Explore meu portfólio de arquitetura de software, sistemas distribuídos, cloud, GIS e artigos técnicos.",
       "ogTitle": "Fernando Andrade — Software Engineer",
-      "ogDescription": "Arquitetura, sistemas distribuídos, computação em nuvem, GIS e engenharia de software.",
+      "ogDescription": "Portfólio e artigos sobre arquitetura de software, sistemas distribuídos, cloud, GIS e trabalho de engenharia.",
       "ogType": "website",
       "twitterCard": "summary_large_image"
     }
