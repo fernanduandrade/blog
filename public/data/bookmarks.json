@@ -22,5 +22,9 @@
   {
     "link": "https://www.datacamp.com/blog/kafka-vs-sqs",
     "date": "2026-07-24"
+  },
+  {
+    "link": "https://www.designgurus.io/blog/rabbitmq-kafka-activemq-system-design",
+    "date": "2026-07-28"
   }
 ]
